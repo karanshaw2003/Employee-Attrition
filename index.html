@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Attrition Prediction</title>
+</head>
+<body>
+    <h1>Enter Employee Details</h1>
+    <form action="/predict" method="post">
+        Age: <input type="number" name="age" required><br>
+        Job Level: <input type="number" name="job_level" required><br>
+        Monthly Income: <input type="number" name="monthly_income" required><br>
+        Years at Company: <input type="number" name="years_at_company" required><br>
+        Distance From Home: <input type="number" name="distance_from_home" required><br>
+        Number of Companies Worked: <input type="number" name="num_companies_worked" required><br>
+        Percent Salary Hike: <input type="number" name="percent_salary_hike" required><br>
+        Training Times Last Year: <input type="number" name="training_times_last_year" required><br>
+        Years Since Last Promotion: <input type="number" name="years_since_last_promotion" required><br>
+        Years With Current Manager: <input type="number" name="years_with_curr_manager" required><br>
+        
+        <label for="model">Select Model:</label>
+        <select name="model">
+            <option value="random_forest">Random Forest</option>
+            <option value="logistic_regression">Logistic Regression</option>
+        </select><br>
+        
+        <input type="submit" value="Predict">
+    </form>
+    
+    <h2>Prediction Result:</h2>
+    <p>{{ prediction_result }}</p>
+</body>
+</html>
